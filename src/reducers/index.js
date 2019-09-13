@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
+import { currentPokemon } from './currentPokemon';
 
 export const rootReducer = combineReducers({
-  // reducers to add
+  currentPokemon
 });
