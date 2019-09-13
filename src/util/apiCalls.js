@@ -13,7 +13,7 @@ export const cleanPokemon = ({ name, id, sprites, types, height, weight }) => {
     name,
     id,
     sprite: sprites.front_default,
-    types: types.map(typeObj => typeObj.type.name),
+    types: types.map(typeObj => typeObj.type.name).map(name => name[0].toUpperCase() + name.slice(1)),
     height,
     weight
   }
