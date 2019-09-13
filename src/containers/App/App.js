@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { getPokemon } from '../../util/apiCalls';
 import { setPokemon } from '../../actions';
 import Nav from '../../components/Nav/Nav';
+import SearchForm from '../SearchForm/SearchForm';
 
 
 export class App extends Component {
@@ -23,6 +24,7 @@ export class App extends Component {
     return (
       <main className="App">
         <Nav />
+        <SearchForm />
       </main>
     )
   }
