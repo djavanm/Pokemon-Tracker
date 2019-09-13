@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { getPokemon } from '../../util/apiCalls';
 import { setPokemon } from '../../actions';
+import Nav from '../../components/Nav/Nav';
 
 
 export class App extends Component {
@@ -21,7 +22,7 @@ export class App extends Component {
   render() {
     return (
       <main className="App">
-        <p>hi</p>
+        <Nav />
       </main>
     )
   }
