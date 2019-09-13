@@ -9,7 +9,8 @@ class SearchForm extends Component {
     super()
     this.state = {
       name: '',
-      id: ''
+      id: '',
+      newPokemon: false
     }
   }
 
@@ -22,21 +23,24 @@ class SearchForm extends Component {
     const { setPokemon } = this.props;
     const { name, id } = this.state;
     const newPokemon = name ? await getPokemon(name) : await getPokemon(id);
+    this.clearInputs();
     setPokemon(newPokemon);
     console.log(newPokemon);
   }
 
   clearInputs = () => {
-    this.setState({ name: '', id: '' });
+    this.setState({ name: '', id: '', newPokemon: true });
   }
-  
+
   render() {
-    const { name, id } = this.state;
-    const { currentPokemon } = this.props;
+    const { name, id, newPokemon } = this.state;
+    const { pokemon } = this.props;
+    const placeholderName = newPokemon ? pokemon.name : 'Enter a Name!';
+    const placeholderId = newPokemon ? pokemon.id : 'Enter a Number!';
     return (
       <form>
-        <input type="text" placeholder={'not ready yet'} value={name} onChange={(e) => this.handleChange(e)} name="name"/>
-        <input type="number" placeholder={'not ready yet'} value={id} onChange={(e) => this.handleChange(e)} name="id" />
+        <input type="text" placeholder={placeholderName} value={name} onChange={(e) => this.handleChange(e)} name="name"/>
+        <input type="number" placeholder={placeholderId} value={id} onChange={(e) => this.handleChange(e)} name="id" />
         <button type="submit" onClick={(e) => this.handleSubmit(e)}> Search </button>
         <button type="submit" disabled={true} > Catch! </button>
       </form>
@@ -44,8 +48,12 @@ class SearchForm extends Component {
   }
 };
 
+export const mapStateToProps = state => ({
+  pokemon: state.currentPokemon
+});
+
 export const mapDispatchToProps = dispatch => (
   bindActionCreators({ setPokemon }, dispatch)
 );
 
-export default connect(null, mapDispatchToProps)(SearchForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);
