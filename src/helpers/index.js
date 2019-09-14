@@ -12,6 +12,10 @@ export const cleanPokemon = ({ name, id, sprites, types, height, weight }) => {
   }
 };
 
+export const findDescription = (info) => {
+  return info.flavor_text_entries.find(entry => entry.language.name === 'en').flavor_text;
+}
+
 export const generationPicker = id => {
   switch (true) {
     case 0 < id && id <= 151:
