@@ -1,13 +1,14 @@
 .card-container {
   background-color: #F2F2F2;
   display: block;
-  width: 73%;
+  width: 75%;
   margin: 20px auto;
   display: flex;
   border: 2px solid red;
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
   border-radius: 4px;
   background-color: #F2F2F2;
+  padding: 30px;
 }
 
 .poke-img {
@@ -41,4 +42,138 @@
 
 .pokemon-name {
   font-size: 3.5em;
+}
+
+.pokemon-description {
+  min-height: 120px;
+  text-align: center;
+  font-size: 1.7em;
+  width: 93%;
+}
+
+.poke-stats {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.box {
+  background-color: #D8EFF8;
+  margin: 50px 20px 10px 20px;
+  height: 150px;
+  width: 150px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.4em;
+  padding-top: 10px;
+}
+
+.box p {
+  background-color: #D8EFF8;
+}
+
+.measurements p {
+  margin: 3px;
+}
+
+.pokedex-number {
+  margin: 0;
+  padding: 0;
+  font-size: 2.4em;
+}
+
+.generation {
+  margin-top: 25px;
+}
+
+li {
+  list-style-type: none;
+  color: #FFFFFF;
+  border-radius: 4px;
+  padding: 5px;
+  text-align: center;
+  background-color: #D8EFF8;
+  margin: 15px 5px 5px 5px;
+}
+
+.poke-info-list {
+  background-color: #D8EFF8;
+}
+
+.span-type {
+  background-color: #D8EFF8;
+}
+
+.normal {
+  background-color: #A8A878;
+}
+.water {
+  background-color: #6890F0;
+}
+
+.electric {
+  background-color: #F8D030;
+}
+
+.fighting {
+  background-color: #BF3028;
+}
+
+.ground {
+  background-color: #E0C068;
+}
+
+.psychic {
+  background-color: #F41E8F;
+}
+
+.rock {
+  background-color: #78695C;
+}
+
+.dark {
+  background-color: #6F5848;
+}
+
+.steel {
+  background-color: #B8B7D0;
+}
+
+.fire {
+  background-color: #AB1E23;
+}
+
+.grass {
+  background-color: #16793D;
+}
+
+.ice {
+  background-color: #84D2F5;
+}
+
+.poison {
+  background-color: #5E2D88;
+}
+
+.flying {
+  background-color: #91AFC5;
+}
+
+.bug {
+  background-color: #3C9950;
+}
+
+.ghost {
+  background-color: #33326B;
+}
+
+.dragon {
+  background-color: #438A95;
+}
+
+.fairy {
+  background-color: #E61665;
 }
