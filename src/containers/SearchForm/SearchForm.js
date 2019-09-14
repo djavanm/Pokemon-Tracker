@@ -49,7 +49,9 @@ class SearchForm extends Component {
     const placeholderName = newPokemon ? pokemon.name : 'Enter a Name!';
     const placeholderId = newPokemon ? `#${pokemon.id}` : 'Enter a Number!';
     return (
-      <form className='search-form' >
+      <form className='search-form'>
+        <button className="scroll-button">{`<`}</button>
+        <div className = 'middle-container'>
         <div className='inputs-container'>
           <input className="search-name input" type="text" placeholder={placeholderName} value={name} onChange={(e) => this.handleChange(e)} name="name"/>
           <input className="search-num input" type="number" placeholder={placeholderId} value={id} onChange={(e) => this.handleChange(e)} name="id" />
@@ -59,6 +61,8 @@ class SearchForm extends Component {
           <button className="search-btn" type="submit" onClick={(e) => this.handleSurprise(e)}> Surprise Me! </button>
           <button className="search-btn" type="submit" disabled={true} > Track! </button>
         </div>
+        </div>
+        <button className="scroll-button">{`>`}</button>
       </form>
     )
   }
