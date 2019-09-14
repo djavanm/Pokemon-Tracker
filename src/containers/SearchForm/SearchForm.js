@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { getPokemon } from '../../util/apiCalls';
-import { setPokemon } from '../../actions';
+import { setPokemon, catchPokemon } from '../../actions';
 import { randNum } from '../../helpers';
 
 class SearchForm extends Component {
@@ -53,23 +53,32 @@ class SearchForm extends Component {
     console.log(newPokemon)
   }
 
+  handleCatchPokemon = (e) => {
+    e.preventDefault();
+    const { pokemon, catchPokemon } = this.props;
+    catchPokemon(pokemon.id);
+  }
+
+
   render() {
     const { name, id, newPokemon } = this.state;
-    const { pokemon } = this.props;
+    const { pokemon, caughtPokemon } = this.props;
+    console.log(caughtPokemon)
     const placeholderName = newPokemon ? pokemon.name : 'Enter a Name!';
     const placeholderId = newPokemon ? `#${pokemon.id}` : 'Enter a Number!';
+    const isDisabled = pokemon ? caughtPokemon.includes(pokemon.id) : null;
     return (
       <form className='search-form'>
-        <button className="scroll-button" onClick={(e) => this.showNew(e)} name="previous">{`<`}</button>
+        <button className="scroll-button" onClick={this.showNew} name="previous">{`<`}</button>
         <div className = 'middle-container'>
         <div className='inputs-container'>
-          <input className="search-name input" type="text" placeholder={placeholderName} value={name} onChange={(e) => this.handleChan(e)} name="name"/>
-          <input className="search-num input" type="number" placeholder={placeholderId} value={id} onChange={(e) => this.handleChange(e)} name="id" />
+          <input className="search-name input" type="text" placeholder={placeholderName} value={name} onChange={this.handleChange} name="name"/>
+          <input className="search-num input" type="number" placeholder={placeholderId} value={id} onChange={this.handleChange} name="id" />
         </div>
         <div className="button-container">
-          <button className="search-btn" type="submit" onClick={(e) => this.handleSubmit(e)}> Search </button>
-          <button className="search-btn" type="submit" onClick={(e) => this.handleSurprise(e)}> Surprise Me! </button>
-          <button className="search-btn" type="submit" disabled={true} > Track! </button>
+          <button className="search-btn" type="submit" onClick={this.handleSubmit}> Search </button>
+          <button className="search-btn" type="submit" onClick={this.handleSurprise}> Surprise Me! </button>
+          <button className="search-btn" disabled={isDisabled} onClick={this.handleCatchPokemon}> Catch! </button>
         </div>
         </div>
         <button className="scroll-button" onClick={(e) => this.showNew(e)} name="next" >{`>`}</button>
@@ -79,11 +88,12 @@ class SearchForm extends Component {
 };
 
 export const mapStateToProps = state => ({
-  pokemon: state.currentPokemon
+  pokemon: state.currentPokemon,
+  caughtPokemon: state.caughtPokemon
 });
 
 export const mapDispatchToProps = dispatch => (
-  bindActionCreators({ setPokemon }, dispatch)
+  bindActionCreators({ setPokemon, catchPokemon }, dispatch)
 );
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);
