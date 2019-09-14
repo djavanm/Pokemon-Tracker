@@ -43,3 +43,7 @@ export const imageSource = id => {
       return `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png`
   }
 };
+
+export const randNum = () => {
+  return Math.floor(Math.random() * Math.floor(807));
+}

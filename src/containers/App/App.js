@@ -9,11 +9,6 @@ import PokemonCard from '../PokemonCard/PokemonCard';
 
 
 export class App extends Component {
-  constructor() {
-    super()
-
-  }
-
   async componentDidMount() {
     const { setPokemon } = this.props;
     const initialPokemon = await getPokemon('mew');
