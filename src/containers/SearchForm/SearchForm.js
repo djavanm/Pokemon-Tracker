@@ -47,7 +47,7 @@ class SearchForm extends Component {
     const { name, id, newPokemon } = this.state;
     const { pokemon } = this.props;
     const placeholderName = newPokemon ? pokemon.name : 'Enter a Name!';
-    const placeholderId = newPokemon ? pokemon.id : 'Enter a Number!';
+    const placeholderId = newPokemon ? `#${pokemon.id}` : 'Enter a Number!';
     return (
       <form className='search-form' >
         <div className='inputs-container'>
