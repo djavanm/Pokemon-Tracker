@@ -1,4 +1,4 @@
-import { generationPicker, cleanPokemon } from '../helpers';
+import { cleanPokemon } from '../helpers';
 
 export const getPokemon = async indentifier => {
   const url = `https://pokeapi.co/api/v2/pokemon/${indentifier}/`;
