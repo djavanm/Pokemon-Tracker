@@ -43,6 +43,16 @@ class SearchForm extends Component {
     this.setState({ name: '', id: '', newPokemon: true });
   }
 
+  showNew = async (e) => {
+    e.preventDefault();
+    const { setPokemon, pokemon } = this.props;
+    const id = pokemon.id;
+    const newId = e.target.name === 'next' ? id + 1 : id - 1;
+    const newPokemon = await getPokemon(newId);
+    setPokemon(newPokemon);
+    console.log(newPokemon)
+  }
+
   render() {
     const { name, id, newPokemon } = this.state;
     const { pokemon } = this.props;
@@ -50,10 +60,10 @@ class SearchForm extends Component {
     const placeholderId = newPokemon ? `#${pokemon.id}` : 'Enter a Number!';
     return (
       <form className='search-form'>
-        <button className="scroll-button">{`<`}</button>
+        <button className="scroll-button" onClick={(e) => this.showNew(e)} name="previous">{`<`}</button>
         <div className = 'middle-container'>
         <div className='inputs-container'>
-          <input className="search-name input" type="text" placeholder={placeholderName} value={name} onChange={(e) => this.handleChange(e)} name="name"/>
+          <input className="search-name input" type="text" placeholder={placeholderName} value={name} onChange={(e) => this.handleChan(e)} name="name"/>
           <input className="search-num input" type="number" placeholder={placeholderId} value={id} onChange={(e) => this.handleChange(e)} name="id" />
         </div>
         <div className="button-container">
@@ -62,7 +72,7 @@ class SearchForm extends Component {
           <button className="search-btn" type="submit" disabled={true} > Track! </button>
         </div>
         </div>
-        <button className="scroll-button">{`>`}</button>
+        <button className="scroll-button" onClick={(e) => this.showNew(e)} name="next" >{`>`}</button>
       </form>
     )
   }
