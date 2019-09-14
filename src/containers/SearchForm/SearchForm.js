@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { getPokemon } from '../../util/apiCalls';
 import { setPokemon } from '../../actions';
+import { randNum } from '../../helpers';
 
 class SearchForm extends Component {
   constructor() {
@@ -28,6 +29,17 @@ class SearchForm extends Component {
     console.log(newPokemon);
   }
 
+  handleSurprise = async e => {
+    e.preventDefault();
+    const { setPokemon } = this.props;
+    this.clearInputs();
+    const newId = randNum();
+    console.log(newId);
+    const newPokemon = await getPokemon(newId);
+    setPokemon(newPokemon);
+    console.log(newPokemon);
+  }
+
   clearInputs = () => {
     this.setState({ name: '', id: '', newPokemon: true });
   }
@@ -42,6 +54,7 @@ class SearchForm extends Component {
         <input type="text" placeholder={placeholderName} value={name} onChange={(e) => this.handleChange(e)} name="name"/>
         <input type="number" placeholder={placeholderId} value={id} onChange={(e) => this.handleChange(e)} name="id" />
         <button type="submit" onClick={(e) => this.handleSubmit(e)}> Search </button>
+        <button type="submit" onClick={(e) => this.handleSurprise(e)}> Surprise Me! </button>
         <button type="submit" disabled={true} > Catch! </button>
       </form>
     )
