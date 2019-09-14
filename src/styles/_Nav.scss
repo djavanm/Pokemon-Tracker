@@ -13,3 +13,20 @@
 h1 {
   text-align: center;
 }
+
+.routes {
+  color: white;
+  display: flex;
+  flex-direction: row-reverse;
+  height: 20px;
+  padding: 5px;
+  padding-right: 185px;
+}
+
+.nav-btn {
+  height: 20px;
+  width: 50px;
+  background-color: #2FA7D6;
+  color: #FFFFFF;
+  font-size: 1.1em;
+}

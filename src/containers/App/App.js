@@ -6,7 +6,8 @@ import { setPokemon } from '../../actions';
 import Nav from '../../components/Nav/Nav';
 import SearchForm from '../SearchForm/SearchForm';
 import PokemonCard from '../PokemonCard/PokemonCard';
-
+import MyPC from '../MyPC/MyPC';
+import { Route } from 'react-router-dom';
 
 export class App extends Component {
   async componentDidMount() {
@@ -21,7 +22,8 @@ export class App extends Component {
     return (
       <main className="App">
         <Nav />
-        <SearchForm />
+        <Route exact path='/' render={() => <SearchForm />} />
+        <Route exact path='/myPC' render={() => <MyPC />} />
         {currentPokemon && <PokemonCard /> }
       </main>
     )
