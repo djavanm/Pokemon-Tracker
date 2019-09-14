@@ -32,10 +32,9 @@ class SearchForm extends Component {
   handleSurprise = async e => {
     e.preventDefault();
     const { setPokemon } = this.props;
-    this.clearInputs();
     const newId = randNum();
-    console.log(newId);
     const newPokemon = await getPokemon(newId);
+    this.clearInputs();
     setPokemon(newPokemon);
     console.log(newPokemon);
   }
@@ -48,14 +47,18 @@ class SearchForm extends Component {
     const { name, id, newPokemon } = this.state;
     const { pokemon } = this.props;
     const placeholderName = newPokemon ? pokemon.name : 'Enter a Name!';
-    const placeholderId = newPokemon ? pokemon.id : 'Enter a Number!';
+    const placeholderId = newPokemon ? `#${pokemon.id}` : 'Enter a Number!';
     return (
-      <form>
-        <input type="text" placeholder={placeholderName} value={name} onChange={(e) => this.handleChange(e)} name="name"/>
-        <input type="number" placeholder={placeholderId} value={id} onChange={(e) => this.handleChange(e)} name="id" />
-        <button type="submit" onClick={(e) => this.handleSubmit(e)}> Search </button>
-        <button type="submit" onClick={(e) => this.handleSurprise(e)}> Surprise Me! </button>
-        <button type="submit" disabled={true} > Catch! </button>
+      <form className='search-form' >
+        <div className='inputs-container'>
+          <input className="search-name input" type="text" placeholder={placeholderName} value={name} onChange={(e) => this.handleChange(e)} name="name"/>
+          <input className="search-num input" type="number" placeholder={placeholderId} value={id} onChange={(e) => this.handleChange(e)} name="id" />
+        </div>
+        <div className="button-container">
+          <button className="search-btn" type="submit" onClick={(e) => this.handleSubmit(e)}> Search </button>
+          <button className="search-btn" type="submit" onClick={(e) => this.handleSurprise(e)}> Surprise Me! </button>
+          <button className="search-btn" type="submit" disabled={true} > Track! </button>
+        </div>
       </form>
     )
   }
