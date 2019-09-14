@@ -5,7 +5,7 @@ export const PokemonCard = ({ currentPokemon }) => {
   const { name, id, types, height, weight, image, gen } = currentPokemon;
   let typeInfo = types ? types.map((type, index) => <li key={index}>{type}</li>) : null;
   return (
-      <article>
+    <article>
       <img src={image} alt={`name's card`} data-id={id} />
       <p>{name}</p>
       <p>Type{types.length > 1 && <span>s</span>}</p>

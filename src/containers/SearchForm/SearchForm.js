@@ -50,7 +50,7 @@ class SearchForm extends Component {
     const placeholderName = newPokemon ? pokemon.name : 'Enter a Name!';
     const placeholderId = newPokemon ? pokemon.id : 'Enter a Number!';
     return (
-      <form>
+      <form className='search-form' >
         <input type="text" placeholder={placeholderName} value={name} onChange={(e) => this.handleChange(e)} name="name"/>
         <input type="number" placeholder={placeholderId} value={id} onChange={(e) => this.handleChange(e)} name="id" />
         <button type="submit" onClick={(e) => this.handleSubmit(e)}> Search </button>
