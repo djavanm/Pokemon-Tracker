@@ -2,19 +2,19 @@
   width: 69.5%;
   display: flex;
   margin: 5px auto;
-  padding: 25px 75px 25px 75px;
+  padding: 25px 75px 0px 75px;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
   border-radius: 4px;
-  border: 2px solid #01579E;
-  background-color: #F2F2F2;
+  // border: 2px solid #01579E;
+  background-color: #01579E;
   min-height: 100px;
 }
 
 .scroll-button {
-  background-color: #F2F2F2;
+  background-color: #01579E;
   border: none;
   font-size: 6.5em;
-  color: #01579E;
+  color: #f5f5f5;
   font-family: $font-pokemon;
   width: 90px;
 }
@@ -24,19 +24,20 @@
 }
 
 .middle-container {
-  background-color: #F2F2F2;
+  background-color: #01579E;
   flex-grow: 2;
 }
 
 .inputs-container {
-  background-color: #F2F2F2;
+  background-color: #01579E;
+  border: 2px solid transparent;
   margin-top: 10px;
   display: flex;
   justify-content: center;
 }
 
 .button-container {
-  background-color: #F2F2F2;
+  background-color: #01579E;
   display: flex;
   justify-content: center;
 
@@ -49,7 +50,8 @@
   height: 25px;
   display: inline;
   margin-left: 10px;
-  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  
 }
 
 .search-name {
@@ -64,8 +66,8 @@
   height: 45px;
   width: 12%;
   border-radius: 5px;
-  background-color: #2FA7D6;
-  color: #FFFFFF;
+  background-color: #f5f5f5;
+  color: #01579E;
   margin: 20px 25px 0px 50px;
   font-size: 1.1em;
 }

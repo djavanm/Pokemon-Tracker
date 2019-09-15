@@ -3,9 +3,9 @@ export const setPokemon = pokemon => ({
   pokemon
 });
 
-export const catchPokemon = id => ({
+export const catchPokemon = pokemon => ({
   type: 'CATCH_POKEMON',
-  id
+  pokemon
 });
 
 export const releasePokemon = id => ({

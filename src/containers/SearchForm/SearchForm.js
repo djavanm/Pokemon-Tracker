@@ -56,7 +56,7 @@ class SearchForm extends Component {
   handleCatchPokemon = (e) => {
     e.preventDefault();
     const { pokemon, catchPokemon } = this.props;
-    catchPokemon(pokemon.id);
+    catchPokemon(pokemon);
   }
 
 
@@ -66,7 +66,7 @@ class SearchForm extends Component {
     console.log(caughtPokemon)
     const placeholderName = newPokemon ? pokemon.name : 'Enter a Name!';
     const placeholderId = newPokemon ? `#${pokemon.id}` : 'Enter a Number!';
-    const isDisabled = pokemon ? caughtPokemon.includes(pokemon.id) : null;
+    const isDisabled = pokemon ? caughtPokemon.map(pokemon => pokemon.id).includes(pokemon.id) : null;
     return (
       <form className='search-form'>
         <button className="scroll-button" onClick={this.showNew} name="previous">{`<`}</button>
