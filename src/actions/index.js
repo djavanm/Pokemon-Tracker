@@ -12,3 +12,13 @@ export const releasePokemon = id => ({
   type: 'RELEASE_POKEMON',
   id
 });
+
+export const addToTeam = pokemon => ({
+  type: 'ADD_POKEMON',
+  pokemon
+});
+
+export const removeFromTeam = id => ({
+  type: 'REMOVE_POKEMON',
+  id
+});

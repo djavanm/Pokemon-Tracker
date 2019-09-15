@@ -29,9 +29,21 @@ h1 {
 }
 
 .nav-btn {
-  height: 20px;
-  width: 50px;
+  height: 25px;
+  padding: 2px;
+  margin-left: 5px;
   background-color: #2FA7D6;
   color: #FFFFFF;
   font-size: 1.1em;
+  border-radius: 3px;
+}
+
+.nav-btn:hover {
+  background-color: #00569E;
+  font-weight: 700;
+}
+
+.active button {
+  background-color: red;
+
 }

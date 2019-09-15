@@ -6,14 +6,24 @@
   border-radius: 4px;
   border: 2px solid #01579E;
   background-color: #F2F2F2;
-  min-height: 100px;
+  min-height: 300px;
 }
 
 .sprite {
   padding: 0;
-  margin: 0;
+  margin: 5px;
   height: 60px;
   width: 60px;
+}
+
+.sprites {
+  text-align: center;
+}
+
+.team-container {
+  margin-bottom: 20px;
+  min-height: 100px;
+  text-align: center;
 }
 
 .mypc-laptop-logo {
@@ -22,6 +32,62 @@
 
 .sprite:hover {
   cursor: pointer;
-  border: 2px solid red;
+  border-bottom: 2px solid red;
+}
+
+.onTeam {
+  border-bottom: 1px solid green;
+}
+
+.current-team-text {
+  text-align: center;
+}
+
+.catch-warning {
+  color: red;
+}
+
+.my-team-container {
+  width: 69.5%;
+  display: flex;
+  margin: 5px auto;
+  padding: 25px 75px 0px 75px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  background-color: #01579E;
+  min-height: 100px;
+}
+
+.team {
+  text-align: center;
+}
+
+.team-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.team-btn {
+  height: 45px;
   border-radius: 5px;
+  background-color: #f5f5f5;
+  color: #01579E;
+  margin: 20px 25px 0px 50px;
+  font-size: 1.1em;
+  padding: 0 5px;
+}
+
+.team-btn:disabled {
+  background: #F2F2F2;
+  color: #FF5B4C;
+}
+
+.team-btn:hover {
+  font-weight: 700;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+}
+
+.team-btn:hover:disabled {
+  font-weight: 300;
+  box-shadow: none;
 }

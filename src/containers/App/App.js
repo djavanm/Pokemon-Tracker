@@ -7,7 +7,8 @@ import Nav from '../../components/Nav/Nav';
 import SearchForm from '../SearchForm/SearchForm';
 import PokemonCard from '../PokemonCard/PokemonCard';
 import MyPC from '../MyPC/MyPC';
-import { Route } from 'react-router-dom';
+import MyTeam from '../MyTeam/MyTeam';
+import { Route, Redirect } from 'react-router-dom';
 
 export class App extends Component {
   async componentDidMount() {
@@ -22,8 +23,9 @@ export class App extends Component {
     return (
       <main className="App">
         <Nav />
-        <Route exact path='/' render={() => <SearchForm />} />
-        <Route exact path='/myPC' render={() => <MyPC />} />
+        <Route  exact path='/' component={SearchForm} />
+        <Route  exact path='/myPC' render={() => currentPokemon ? <MyPC /> : <Redirect to='/' /> } />
+        <Route  exact path='/myTeam' render={() => currentPokemon ? <MyTeam /> : <Redirect to='/' /> }/>
         {currentPokemon && <PokemonCard /> }
       </main>
     )
