@@ -61,12 +61,18 @@ class SearchForm extends Component {
 
 
   render() {
+    let displayBool = true;
+    let catchBtnText = true;
     const { name, id, newPokemon } = this.state;
     const { pokemon, caughtPokemon } = this.props;
     console.log(caughtPokemon)
     const placeholderName = newPokemon ? pokemon.name : 'Enter a Name!';
     const placeholderId = newPokemon ? `#${pokemon.id}` : 'Enter a Number!';
     const isDisabled = pokemon ? caughtPokemon.map(pokemon => pokemon.id).includes(pokemon.id) : null;
+    if(pokemon) {
+      displayBool = caughtPokemon.map(pokemon => pokemon.id).includes(pokemon.id);
+      catchBtnText =  displayBool ? 'Caught!' : 'Catch!';
+    }
     return (
       <form className='search-form'>
         <button className="scroll-button" onClick={this.showNew} name="previous">{`<`}</button>
@@ -78,7 +84,7 @@ class SearchForm extends Component {
         <div className="button-container">
           <button className="search-btn" type="submit" onClick={this.handleSubmit}> Search </button>
           <button className="search-btn" type="submit" onClick={this.handleSurprise}> Surprise Me! </button>
-          <button className="search-btn" disabled={isDisabled} onClick={this.handleCatchPokemon}> Catch! </button>
+          {pokemon && <button className="search-btn" disabled={displayBool} onClick={this.handleCatchPokemon}> {catchBtnText}</button>}
         </div>
         </div>
         <button className="scroll-button" onClick={(e) => this.showNew(e)} name="next" >{`>`}</button>
