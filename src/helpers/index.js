@@ -8,7 +8,8 @@ export const cleanPokemon = ({ name, id, sprites, types, height, weight }) => {
     weight,
     gen: generationPicker(id),
     image: imageSource(id),
-    tracked: false
+    tracked: false,
+    gif: `https://projectpokemon.org/images/normal-sprite/${name}.gif`
   }
 };
 

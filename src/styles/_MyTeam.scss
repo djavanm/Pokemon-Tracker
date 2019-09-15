@@ -1,0 +1,19 @@
+.my-team-container {
+  width: 69.5%;
+  margin: 5px auto;
+  padding: 25px 75px 25px 75px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  border: 2px solid #01579E;
+  background-color: #F2F2F2;
+  min-height: 100px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.warning-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

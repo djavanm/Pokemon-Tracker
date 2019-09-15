@@ -41,6 +41,7 @@ export class MyPC extends Component {
       <section className='my-pc-container'>
         <p className='current-team-text'>Curent Team:
         {caughtPokemon.length === 0 && <span className='catch-warning'> Catch Pokemon to add them to your team!</span>}
+        {caughtPokemon.length === 0 &&<Link to='/'><button className="team-btn">Catch Pokemon</button></Link>}
         {caughtPokemon.length > 0 && teamPokemon.length === 0 && <span className='catch-warning'> Add some Pokemon to your team!</span>}
         </p>
         <div className='team-container'>{teamSprites}</div>
