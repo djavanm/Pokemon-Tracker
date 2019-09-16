@@ -96,7 +96,5 @@ describe('MyPC', () => {
     expect(getPokemon).toHaveBeenCalledWith(1);
     wrapper.instance().showPokemon(mockEvent, 'charizard');
     expect(getPokemon).toHaveBeenCalledWith('charizard');
-  });
-
-  
+  });  
 });

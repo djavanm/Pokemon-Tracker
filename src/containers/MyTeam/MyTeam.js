@@ -11,9 +11,12 @@ export class MyTeam extends Component {
   showPokemon = async (e, newId) => {
     e.preventDefault();
     const { setPokemon } = this.props;
-    const newPokemon = await getPokemon(newId);
-    setPokemon(newPokemon);
-    console.log(newPokemon);
+    try {
+      const newPokemon = await getPokemon(newId);
+      setPokemon(newPokemon);
+      console.log(newPokemon);
+    } catch {
+    }
   };
 
   render() {

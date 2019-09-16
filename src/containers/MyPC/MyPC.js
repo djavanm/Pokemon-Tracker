@@ -16,7 +16,6 @@ export class MyPC extends Component {
       setPokemon(newPokemon);
       console.log(newPokemon);
     } catch {
-      console.log('error')
     }
   };
 

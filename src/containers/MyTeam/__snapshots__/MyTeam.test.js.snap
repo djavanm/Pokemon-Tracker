@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyTeam it should match the snapshot given the correct data 1`] = `
+<section
+  className="my-team-container"
+>
+  <MiniCard
+    key="1"
+    pokemon={
+      Object {
+        "description": "Bulbasaur is cool.",
+        "gen": "Generation 1",
+        "gif": "https://projectpokemon.org/images/normal-sprite/bulbasaur.gif",
+        "height": 7,
+        "id": 1,
+        "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
+        "name": "Bulbasaur",
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+        "types": Array [
+          "Grass",
+          "Poison",
+        ],
+      }
+    }
+    showPokemon={[Function]}
+  />
+</section>
+`;
