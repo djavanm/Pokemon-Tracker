@@ -19,12 +19,12 @@ export class MyPC extends Component {
   addPokemon = pokemon => {
     const { addToTeam } = this.props;
     addToTeam(pokemon);
-  }
+  };
 
   removePokemon = pokemon => {
     const { removeFromTeam } = this.props;
     removeFromTeam(pokemon.id)
-  }
+  };
 
   render() {
     const { caughtPokemon, teamPokemon, currentPokemon } = this.props;
@@ -55,8 +55,8 @@ export class MyPC extends Component {
         </div>}
       </section>
     )
-  }
-}
+  };
+};
 
 export const mapStateToProps = state => ({
   currentPokemon: state.currentPokemon,
@@ -66,6 +66,6 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => (
   bindActionCreators({ setPokemon, addToTeam, removeFromTeam }, dispatch)
-)
+);
 
 export default connect(mapStateToProps, mapDispatchToProps)(MyPC);

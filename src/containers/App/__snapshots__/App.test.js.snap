@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match the snapshot with the data passed through 1`] = `
+<main
+  className="App"
+>
+  <Nav />
+  <Route
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(SearchForm)",
+        "type": [Function],
+      }
+    }
+    exact={true}
+    path="/"
+  />
+  <Route
+    exact={true}
+    path="/myPC"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/myTeam"
+    render={[Function]}
+  />
+</main>
+`;
