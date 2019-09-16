@@ -52,8 +52,6 @@ export class MyPC extends Component {
         {caughtPokemon.length > 0 && <div className="team-button-container">
         <button className="team-btn" disabled={addDisabled} onClick={() => this.addPokemon(currentPokemon)}> Add To Team </button>
         <button className="team-btn" disabled={removeDisabled} onClick={() => this.removePokemon(currentPokemon)}> Remove From Team </button>
-        <Link to='/myTeam'><button className="team-btn">Show Team</button></Link>
-        <Link to='/'><button className="team-btn">Track More Pokemon</button></Link>
         </div>}
       </section>
     )
