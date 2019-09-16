@@ -74,5 +74,4 @@ describe('App', () => {
   it('should call getPokemon when mounting', () => {
   expect(getPokemon).toHaveBeenCalledWith('mew');
   });
-
 });

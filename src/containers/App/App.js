@@ -18,7 +18,6 @@ export class App extends Component {
     setPokemon(initialPokemon);
     console.log(initialPokemon);
     } catch {
-    console.log('error')
     }
   };
 
