@@ -23,10 +23,14 @@ class SearchForm extends Component {
     e.preventDefault();
     const { setPokemon } = this.props;
     const { name, id } = this.state;
-    const newPokemon = name ? await getPokemon(name) : await getPokemon(id);
+    try {
+      const newPokemon = name ? await getPokemon(name) : await getPokemon(id);
+      setPokemon(newPokemon);
+      console.log(newPokemon);
+    } catch {
+      console.log('error')
+    }
     this.clearInputs();
-    setPokemon(newPokemon);
-    console.log(newPokemon);
   }
 
   handleSurprise = async e => {

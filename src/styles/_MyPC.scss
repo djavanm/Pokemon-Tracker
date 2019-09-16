@@ -10,10 +10,12 @@
 }
 
 .sprite {
+  border-bottom: 2px solid transparent;
   padding: 0;
   margin: 5px;
   height: 60px;
   width: 60px;
+  transition-duration: 1s;
 }
 
 .sprites {
