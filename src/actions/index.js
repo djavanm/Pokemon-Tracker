@@ -8,11 +8,6 @@ export const catchPokemon = pokemon => ({
   pokemon
 });
 
-export const releasePokemon = id => ({
-  type: 'RELEASE_POKEMON',
-  id
-});
-
 export const addToTeam = pokemon => ({
   type: 'ADD_POKEMON',
   pokemon

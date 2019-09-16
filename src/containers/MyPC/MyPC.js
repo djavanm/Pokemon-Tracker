@@ -33,7 +33,7 @@ export class MyPC extends Component {
     });
     let allSprites = caughtPokemon.map((pokemon, index) => {
       let teamClass = teamPokemon.map(pokemon => pokemon.id).includes(pokemon.id) ? 'onTeam' : null;
-      return <img className={`sprite ${teamClass}`} src={`${pokemon.sprite}`} alt={`{pokemon.name}'s sprite`} key={index} onClick={(e) => this.showPokemon(e, pokemon.id)}/>
+      return <img className={`sprite ${teamClass}`} src={`${pokemon.sprite}`} alt={`${pokemon.name}'s sprite`} key={index} onClick={(e) => this.showPokemon(e, pokemon.id)}/>
     });
     const addDisabled = teamPokemon.length >= 6 || teamPokemon.map(pokemon => pokemon.id).includes(currentPokemon.id);
     const removeDisabled = !teamPokemon.map(pokemon => pokemon.id).includes(currentPokemon.id);
