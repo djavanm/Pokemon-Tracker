@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchForm should match the snapshot given the proper information 1`] = `
+<form
+  className="search-form"
+>
+  <button
+    className="scroll-button"
+    name="previous"
+    onClick={[Function]}
+  >
+    &lt;
+  </button>
+  <div
+    className="middle-container"
+  >
+    <div
+      className="inputs-container"
+    >
+      <input
+        className="search-name input"
+        name="name"
+        onChange={[Function]}
+        placeholder="Enter a Name!"
+        type="text"
+        value=""
+      />
+      <input
+        className="search-num input"
+        name="id"
+        onChange={[Function]}
+        placeholder="Enter a Number!"
+        type="number"
+        value=""
+      />
+    </div>
+    <div
+      className="button-container"
+    >
+      <button
+        className="search-btn"
+        onClick={[Function]}
+        type="submit"
+      >
+         Search 
+      </button>
+      <button
+        className="search-btn"
+        onClick={[Function]}
+        type="submit"
+      >
+         Surprise Me! 
+      </button>
+      <button
+        className="search-btn"
+        disabled={true}
+        onClick={[Function]}
+      >
+         
+        Caught!
+      </button>
+    </div>
+  </div>
+  <button
+    className="scroll-button"
+    name="next"
+    onClick={[Function]}
+  >
+    &gt;
+  </button>
+</form>
+`;
