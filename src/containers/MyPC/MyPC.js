@@ -54,8 +54,8 @@ export class MyPC extends Component {
           {allSprites}
           </div>
           {caughtPokemon.length > 0 && <div className="team-button-container">
+          <button className="team-btn rem" disabled={removeDisabled} onClick={() => this.removePokemon(currentPokemon)}> Remove From Team </button>
           <button className="team-btn" disabled={addDisabled} onClick={() => this.addPokemon(currentPokemon)}> Add To Team </button>
-          <button className="team-btn" disabled={removeDisabled} onClick={() => this.removePokemon(currentPokemon)}> Remove From Team </button>
         </div>}
       </section>
     )
