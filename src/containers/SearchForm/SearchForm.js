@@ -74,7 +74,6 @@ export class SearchForm extends Component {
     const { pokemon, caughtPokemon } = this.props;
     const placeholderName = newPokemon ? pokemon.name : 'Enter a Name!';
     const placeholderId = newPokemon ? `#${pokemon.id}` : 'Enter a Number!';
-    const isDisabled = pokemon ? caughtPokemon.map(pokemon => pokemon.id).includes(pokemon.id) : false;
     if(pokemon) {
       displayBool = caughtPokemon.map(pokemon => pokemon.id).includes(pokemon.id);
       catchBtnText =  displayBool ? 'Caught!' : 'Catch!';

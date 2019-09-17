@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { shallow } from 'enzyme';
 import { PokemonCard, mapStateToProps } from './PokemonCard';
 
@@ -19,7 +19,6 @@ describe('PokemonCard', () => {
 
   const mockCaughtPokemon = [mockPokemon];
   const mockTeamPokemon = [mockPokemon];
-  const mockCurrentPokemon =  mockPokemon;
   const mockState = {
     currentPokemon: mockPokemon,
     caughtPokemon: mockCaughtPokemon,

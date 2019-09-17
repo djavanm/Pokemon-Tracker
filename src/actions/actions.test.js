@@ -32,7 +32,6 @@ describe('actions', () => {
   });
 
   it('should have a type of ADD_POKEMON', () => {
-    const mockId = 1;
     const expected = {
       type: 'REMOVE_POKEMON',
       id: 1

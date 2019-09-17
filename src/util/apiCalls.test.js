@@ -1,5 +1,5 @@
 import { getPokemon, getDescription } from './apiCalls';
-import { cleanPokemon, findDescription } from '../helpers';
+import { cleanPokemon } from '../helpers';
 
 
 jest.mock('../helpers');

@@ -20,7 +20,7 @@ export class MyTeam extends Component {
   };
 
   render() {
-    const { teamPokemon, setPokemon } = this.props;
+    const { teamPokemon } = this.props;
     let teamGifs = teamPokemon.map((pokemon, index) => {
       return <MiniCard key={pokemon.id} pokemon={pokemon} showPokemon={this.showPokemon} />
     });
