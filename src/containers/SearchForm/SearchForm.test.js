@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { SearchForm, mapStateToProps, mapDispatchToProps } from './SearchForm';
-import { getDescription } from '../../util/apiCalls';
 import { setPokemon } from '../../actions';
 
 describe('SearchForm', () => {
