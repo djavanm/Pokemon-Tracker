@@ -20,4 +20,4 @@ export const getDescription = async id => {
   };
   const speciesInfo = await response.json();
   return findDescription(speciesInfo);
-}
+};
