@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { shallow } from 'enzyme';
-import { MyTeam, mapStateToProps, mapDispatchToProps } from './MyTeam';
+import { MyTeam, mapStateToProps } from './MyTeam';
 import { getPokemon, getDescription } from '../../util/apiCalls';
-import { setPokemon } from '../../actions';
-import { Link } from 'react-router-dom';
 
 jest.mock('../../util/apiCalls');
 
@@ -40,7 +38,6 @@ describe('MyTeam', () => {
 
   const mockCaughtPokemon = [mockPokemon];
   const mockTeamPokemon = [mockPokemon];
-  const mockCurrentPokemon =  mockPokemon;
   const mockState = {
     currentPokemon: mockPokemon,
     caughtPokemon: mockCaughtPokemon,

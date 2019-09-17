@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { MyPC, mapStateToProps, mapDispatchToProps } from './MyPC';
 import { setPokemon, addToTeam, removeFromTeam } from '../../actions';
-import { FaLaptop } from 'react-icons/fa';
 import { getPokemon, getDescription } from '../../util/apiCalls';
 jest.mock('../../util/apiCalls');
 
@@ -96,5 +95,5 @@ describe('MyPC', () => {
     expect(getPokemon).toHaveBeenCalledWith(1);
     wrapper.instance().showPokemon(mockEvent, 'charizard');
     expect(getPokemon).toHaveBeenCalledWith('charizard');
-  });  
+  });
 });

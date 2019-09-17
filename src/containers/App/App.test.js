@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { App, mapStateToProps, mapDispatchToProps } from './App';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { setPokemon } from '../../actions';
 import { getPokemon, getDescription } from '../../util/apiCalls';
 
@@ -40,7 +39,6 @@ describe('App', () => {
 
   const mockCaughtPokemon = [mockPokemon];
   const mockTeamPokemon = [mockPokemon];
-  const mockCurrentPokemon =  mockPokemon;
   const mockState = {
     currentPokemon: mockPokemon,
     caughtPokemon: mockCaughtPokemon,
