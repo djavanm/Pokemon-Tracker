@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav should match the snapshot 1`] = `
+<div
+  className="mini-card"
+>
+  <img
+    alt="Bulbasaur's sprite"
+    className="mini-gif"
+    onClick={[Function]}
+    src="https://projectpokemon.org/images/normal-sprite/bulbasaur.gif"
+  />
+  <ul>
+    <li
+      className="grass"
+      key="0"
+    >
+      Grass
+    </li>
+    <li
+      className="poison"
+      key="1"
+    >
+      Poison
+    </li>
+  </ul>
+</div>
+`;

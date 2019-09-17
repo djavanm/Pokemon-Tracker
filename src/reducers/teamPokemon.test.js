@@ -29,6 +29,4 @@ describe('teamPokemon reducer', () => {
     const result = teamPokemon([mockPokemon], actionObj);
     expect(result).toEqual(expected);
   });
-
-
 });

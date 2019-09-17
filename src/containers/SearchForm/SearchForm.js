@@ -5,7 +5,7 @@ import { getPokemon } from '../../util/apiCalls';
 import { setPokemon, catchPokemon } from '../../actions';
 import { randNum } from '../../helpers';
 
-class SearchForm extends Component {
+export class SearchForm extends Component {
   constructor() {
     super()
     this.state = {
@@ -13,11 +13,11 @@ class SearchForm extends Component {
       id: '',
       newPokemon: false
     }
-  }
+  };
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
-  }
+  };
 
   handleSubmit = async e => {
     e.preventDefault();
@@ -31,7 +31,7 @@ class SearchForm extends Component {
       console.log('error')
     }
     this.clearInputs();
-  }
+  };
 
   handleSurprise = async e => {
     e.preventDefault();
@@ -41,42 +41,44 @@ class SearchForm extends Component {
     this.clearInputs();
     setPokemon(newPokemon);
     console.log(newPokemon);
-  }
+  };
 
   clearInputs = () => {
     this.setState({ name: '', id: '', newPokemon: true });
-  }
+  };
 
   showNew = async (e) => {
     e.preventDefault();
     const { setPokemon, pokemon } = this.props;
     const id = pokemon.id;
     const newId = e.target.name === 'next' ? id + 1 : id - 1;
-    const newPokemon = await getPokemon(newId);
-    setPokemon(newPokemon);
-    console.log(newPokemon)
-  }
+    try {
+      const newPokemon = await getPokemon(newId);
+      setPokemon(newPokemon);
+      console.log(newPokemon);
+    } catch {
+    }
+  };
 
   handleCatchPokemon = (e) => {
     e.preventDefault();
     const { pokemon, catchPokemon } = this.props;
     catchPokemon(pokemon);
-  }
+  };
 
 
   render() {
     let displayBool = true;
-    let catchBtnText = true;
+    let catchBtnText = '';
     const { name, id, newPokemon } = this.state;
     const { pokemon, caughtPokemon } = this.props;
-    console.log(caughtPokemon)
     const placeholderName = newPokemon ? pokemon.name : 'Enter a Name!';
     const placeholderId = newPokemon ? `#${pokemon.id}` : 'Enter a Number!';
-    const isDisabled = pokemon ? caughtPokemon.map(pokemon => pokemon.id).includes(pokemon.id) : null;
+    const isDisabled = pokemon ? caughtPokemon.map(pokemon => pokemon.id).includes(pokemon.id) : false;
     if(pokemon) {
       displayBool = caughtPokemon.map(pokemon => pokemon.id).includes(pokemon.id);
       catchBtnText =  displayBool ? 'Caught!' : 'Catch!';
-    }
+    };
     return (
       <form className='search-form'>
         <button className="scroll-button" onClick={this.showNew} name="previous">{`<`}</button>

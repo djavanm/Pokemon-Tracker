@@ -13,10 +13,13 @@ import { Route, Redirect } from 'react-router-dom';
 export class App extends Component {
   async componentDidMount() {
     const { setPokemon } = this.props;
+    try {
     const initialPokemon = await getPokemon('mew');
     setPokemon(initialPokemon);
     console.log(initialPokemon);
-  }
+    } catch {
+    }
+  };
 
   render() {
     const  { currentPokemon } = this.props;

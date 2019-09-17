@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PokemonCard should match the snapshot given the correct information 1`] = `
+<article
+  className="card-container"
+>
+  <img
+    alt="name's card"
+    className="poke-img"
+    data-id={1}
+    src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png"
+  />
+  <div
+    className="poke-info-container"
+  >
+    <div
+      className="poke-info"
+    >
+      <p
+        className="pokemon-banner"
+      >
+        Current Pokemon:
+      </p>
+      <p
+        className="pokemon-name"
+      >
+         
+        Bulbasaur
+         
+      </p>
+      <p
+        className="pokemon-description"
+      >
+        Bulbasaur is cool.
+      </p>
+    </div>
+    <div
+      className="poke-stats"
+    >
+      <div
+        className="box"
+      >
+        <p>
+          Type
+          <span
+            className="span-type"
+          >
+            s
+          </span>
+          :
+        </p>
+        <ul
+          className="poke-info-list"
+        >
+          <li
+            className="grass"
+            key="0"
+          >
+            Grass
+          </li>
+          <li
+            className="poison"
+            key="1"
+          >
+            Poison
+          </li>
+        </ul>
+      </div>
+      <div
+        className="box measurements"
+      >
+        <p>
+          Height: 
+        </p>
+        <p>
+          7
+          ft
+        </p>
+        <p>
+          Weight:
+        </p>
+        <p>
+           lbs
+        </p>
+      </div>
+      <div
+        className="box"
+      >
+        <p
+          className="pokedex-number"
+        >
+          #
+          1
+        </p>
+        <p
+          className="generation"
+        >
+          Generation 1
+        </p>
+      </div>
+    </div>
+  </div>
+</article>
+`;

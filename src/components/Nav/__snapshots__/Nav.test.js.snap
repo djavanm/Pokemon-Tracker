@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav should match the snapshot 1`] = `
+<nav>
+  <Link
+    className="nav-link"
+    to="/"
+  >
+     
+    <h1>
+      <span
+        className="pokemon-title"
+      >
+        Poké
+      </span>
+      <span
+        className="tracker-title"
+      >
+        Tracker
+      </span>
+    </h1>
+     
+  </Link>
+  <div
+    className="routes"
+  >
+    <NavLink
+      exact={true}
+      to="/myTeam"
+    >
+      <button
+        className="nav-btn"
+      >
+        my Team
+      </button>
+    </NavLink>
+    <NavLink
+      exact={true}
+      to="/"
+    >
+      <button
+        className="nav-btn"
+      >
+        Tracker
+      </button>
+    </NavLink>
+    <NavLink
+      exact={true}
+      to="/myPC"
+    >
+      <button
+        className="nav-btn"
+      >
+        myPC
+      </button>
+    </NavLink>
+  </div>
+</nav>
+`;

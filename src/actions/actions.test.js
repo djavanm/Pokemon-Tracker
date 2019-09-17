@@ -6,7 +6,7 @@ describe('actions', () => {
     const expected = {
       type: 'SET_POKEMON',
       pokemon: { ...mockPokemon }
-    }
+    };
     const result = actions.setPokemon(mockPokemon);
     expect(result).toEqual(expected);
   });
@@ -16,7 +16,7 @@ describe('actions', () => {
     const expected = {
       type: 'CATCH_POKEMON',
       pokemon: { ...mockPokemon }
-    }
+    };
     const result = actions.catchPokemon(mockPokemon);
     expect(result).toEqual(expected);
   });
@@ -26,7 +26,7 @@ describe('actions', () => {
     const expected = {
       type: 'ADD_POKEMON',
       pokemon: { ...mockPokemon }
-    }
+    };
     const result = actions.addToTeam(mockPokemon);
     expect(result).toEqual(expected);
   });
@@ -36,7 +36,7 @@ describe('actions', () => {
     const expected = {
       type: 'REMOVE_POKEMON',
       id: 1
-    }
+    };
     const result = actions.removeFromTeam(1);
     expect(result).toEqual(expected);
   });
