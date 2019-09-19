@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { getPokemon } from '../../util/apiCalls';
 import { fetchPokemon } from '../../thunks/fetchPokemon';
-import { setPokemon } from '../../actions';
 import { Link } from 'react-router-dom';
 import MiniCard from '../../components/MiniCard/MiniCard';
 

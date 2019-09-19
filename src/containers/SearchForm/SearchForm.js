@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { getPokemon } from '../../util/apiCalls';
-import { setPokemon, catchPokemon } from '../../actions';
+import { catchPokemon } from '../../actions';
 import { fetchPokemon } from '../../thunks/fetchPokemon';
 import { randNum } from '../../helpers';
 
@@ -23,7 +23,7 @@ export class SearchForm extends Component {
   handleSubmit = async e => {
     e.preventDefault();
     const { fetchPokemon } = this.props;
-    const { name, id } = this.state;
+    const { id } = this.state;
     const url = `https://pokeapi.co/api/v2/pokemon/${id}/`;
     fetchPokemon(url);
     this.clearInputs();

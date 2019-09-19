@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { FaLaptop } from 'react-icons/fa';
 import { fetchPokemon } from '../../thunks/fetchPokemon'
-import { setPokemon, addToTeam, removeFromTeam } from '../../actions';
+import { addToTeam, removeFromTeam } from '../../actions';
 import { Link } from 'react-router-dom';
 
 export class MyPC extends Component {
