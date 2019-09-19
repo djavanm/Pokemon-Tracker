@@ -43,18 +43,18 @@ exports[`MyPC should match the snapshot given the correct data 1`] = `
     className="team-button-container"
   >
     <button
+      className="team-btn rem"
+      disabled={false}
+      onClick={[Function]}
+    >
+       Remove From Team 
+    </button>
+    <button
       className="team-btn"
       disabled={true}
       onClick={[Function]}
     >
        Add To Team 
-    </button>
-    <button
-      className="team-btn"
-      disabled={false}
-      onClick={[Function]}
-    >
-       Remove From Team 
     </button>
   </div>
 </section>

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { getPokemon } from '../../util/apiCalls';
-import { setPokemon } from '../../actions';
+import { fetchPokemon } from '../../thunks/fetchPokemon';
 import Nav from '../../components/Nav/Nav';
 import SearchForm from '../SearchForm/SearchForm';
 import PokemonCard from '../PokemonCard/PokemonCard';
@@ -12,13 +11,8 @@ import { Route, Redirect } from 'react-router-dom';
 
 export class App extends Component {
   async componentDidMount() {
-    const { setPokemon } = this.props;
-    try {
-    const initialPokemon = await getPokemon('mew');
-    setPokemon(initialPokemon);
-    console.log(initialPokemon);
-    } catch {
-    }
+    const { fetchPokemon } = this.props;
+    fetchPokemon(`https://pokeapi.co/api/v2/pokemon/1/`);
   };
 
   render() {
@@ -40,7 +34,7 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => (
-  bindActionCreators({ setPokemon }, dispatch)
+  bindActionCreators({ fetchPokemon }, dispatch)
 );
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

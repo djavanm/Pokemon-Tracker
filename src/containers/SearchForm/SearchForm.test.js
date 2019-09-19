@@ -65,12 +65,4 @@ describe('SearchForm', () => {
     const mappedProps = mapStateToProps(mockState);
     expect(mappedProps).toEqual(expected);
   });
-
-  it('it calls dispatch with the setPokemon action', () => {
-    const mockDispatch = jest.fn();
-    const actionToDispatch = setPokemon(mockPokemon);
-    const mappedProps = mapDispatchToProps(mockDispatch);
-    mappedProps.setPokemon(mockPokemon);
-    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
-  });
 });

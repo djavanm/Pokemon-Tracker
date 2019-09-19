@@ -2,21 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { FaLaptop } from 'react-icons/fa';
-import { getPokemon } from '../../util/apiCalls';
-import { setPokemon, addToTeam, removeFromTeam } from '../../actions';
+import { fetchPokemon } from '../../thunks/fetchPokemon'
+import { addToTeam, removeFromTeam } from '../../actions';
 import { Link } from 'react-router-dom';
 
 export class MyPC extends Component {
 
   showPokemon = async (e, newId) => {
     e.preventDefault();
-    const { setPokemon } = this.props;
-    try {
-      const newPokemon = await getPokemon(newId);
-      setPokemon(newPokemon);
-      console.log(newPokemon);
-    } catch {
-    }
+    const { fetchPokemon } = this.props;
+    const url = `https://pokeapi.co/api/v2/pokemon/${newId}/`;
+    fetchPokemon(url);
   };
 
   addPokemon = pokemon => {
@@ -69,7 +65,7 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => (
-  bindActionCreators({ setPokemon, addToTeam, removeFromTeam }, dispatch)
+  bindActionCreators({ fetchPokemon, addToTeam, removeFromTeam }, dispatch)
 );
 
 export default connect(mapStateToProps, mapDispatchToProps)(MyPC);
