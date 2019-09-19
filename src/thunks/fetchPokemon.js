@@ -6,9 +6,10 @@ export const fetchPokemon = url => {
   return async dispatch => {
     try {
       const res = await fetch(url);
+      console.log(res);
       if(!res.ok) {
-        throw Error(res.message)
-      }
+        throw Error(res.statusText);
+      };
       const data =  await res.json();
       let pokemon = cleanPokemon(data);
       pokemon.description = await dispatch(fetchDescription(pokemon.id));

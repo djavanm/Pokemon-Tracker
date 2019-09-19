@@ -6,8 +6,8 @@ export const fetchDescription = id => {
     try {
       const res = await fetch(url);
       if(!res.ok) {
-        throw Error(res.message);
-      }
+        throw Error(res.statusText);
+      };
       const pokeInfo = await res.json();
       return findDescription(pokeInfo);
     } catch (error) {
