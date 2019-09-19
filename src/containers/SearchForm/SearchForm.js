@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { getPokemon } from '../../util/apiCalls';
 import { catchPokemon } from '../../actions';
 import { fetchPokemon } from '../../thunks/fetchPokemon';
 import { randNum } from '../../helpers';
@@ -44,15 +43,11 @@ export class SearchForm extends Component {
 
   showNew = async (e) => {
     e.preventDefault();
-    const { setPokemon, pokemon } = this.props;
+    const { fetchPokemon, pokemon } = this.props;
     const id = pokemon.id;
     const newId = e.target.name === 'next' ? id + 1 : id - 1;
-    try {
-      const newPokemon = await getPokemon(newId);
-      setPokemon(newPokemon);
-      console.log(newPokemon);
-    } catch {
-    }
+    const url = `https://pokeapi.co/api/v2/pokemon/${newId}/`;
+    fetchPokemon(url);
   };
 
   handleCatchPokemon = (e) => {
