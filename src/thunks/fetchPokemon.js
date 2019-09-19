@@ -1,5 +1,6 @@
 import { setPokemon } from '../actions';
 import { cleanPokemon } from '../helpers';
+import { fetchDescription } from './fetchDescription';
 
 export const fetchPokemon = url => {
   return async dispatch => {
@@ -10,9 +11,11 @@ export const fetchPokemon = url => {
       }
       const data =  await res.json();
       let pokemon = cleanPokemon(data);
+      pokemon.description = await dispatch(fetchDescription(pokemon.id));
+      console.log(pokemon);
       dispatch(setPokemon(pokemon));
     } catch (error) {
-      // console.log(error.message);
+      console.log(error.message);
     };
   };
 };
