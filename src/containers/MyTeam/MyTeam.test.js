@@ -1,26 +1,25 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { MyTeam, mapStateToProps } from './MyTeam';
-import { getPokemon, getDescription } from '../../util/apiCalls';
 
-jest.mock('../../util/apiCalls');
-
-getDescription.mockImplementation(() => {
-  return 'Bulbasaur is cool.';
-});
-
-getPokemon.mockImplementation(() => {
-  return {
-    name: 'Bulbasaur',
-    description: 'Bulbasaur is cool.',
-    gen: 'Generation 1',
-    gif: 'https://projectpokemon.org/images/normal-sprite/bulbasaur.gif',
-    height: 7,
-    id: 1,
-    image: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png',
-    sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'
-  };
-});
+// jest.mock('../../util/apiCalls');
+//
+// getDescription.mockImplementation(() => {
+//   return 'Bulbasaur is cool.';
+// });
+//
+// getPokemon.mockImplementation(() => {
+//   return {
+//     name: 'Bulbasaur',
+//     description: 'Bulbasaur is cool.',
+//     gen: 'Generation 1',
+//     gif: 'https://projectpokemon.org/images/normal-sprite/bulbasaur.gif',
+//     height: 7,
+//     id: 1,
+//     image: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png',
+//     sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'
+//   };
+// });
 
 describe('MyTeam', () => {
   let wrapper;
@@ -60,16 +59,6 @@ describe('MyTeam', () => {
     };
     const mappedProps = mapStateToProps(mockState);
     expect(mappedProps).toEqual(expected);
-  });
-
-  it('should get a new pokemon when the show Pokemon method is called', () => {
-    const mockEvent = {
-      preventDefault: jest.fn()
-    };
-    wrapper.instance().showPokemon(mockEvent, 1);
-    expect(getPokemon).toHaveBeenCalledWith(1);
-    wrapper.instance().showPokemon(mockEvent, 'charizard');
-    expect(getPokemon).toHaveBeenCalledWith('charizard');
   });
 
 });

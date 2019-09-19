@@ -22,8 +22,8 @@ export class SearchForm extends Component {
   handleSubmit = async e => {
     e.preventDefault();
     const { fetchPokemon } = this.props;
-    const { id } = this.state;
-    const url = `https://pokeapi.co/api/v2/pokemon/${id}/`;
+    const { name, id } = this.state;
+    const url = name ? `https://pokeapi.co/api/v2/pokemon/${name}/` : `https://pokeapi.co/api/v2/pokemon/${id}/`;
     fetchPokemon(url);
     this.clearInputs();
   };

@@ -6,7 +6,7 @@ export const fetchDescription = id => {
     try {
       const res = await fetch(url);
       if(!res.ok) {
-        throw Error(res.statusText);
+        throw Error('There was an error finding your Pokemon.');
       };
       const pokeInfo = await res.json();
       return findDescription(pokeInfo);
