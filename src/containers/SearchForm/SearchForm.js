@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { getPokemon } from '../../util/apiCalls';
 import { setPokemon, catchPokemon } from '../../actions';
+import { fetchPokemon } from '../../thunks/fetchPokemon';
 import { randNum } from '../../helpers';
 
 export class SearchForm extends Component {
@@ -21,26 +22,20 @@ export class SearchForm extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
-    const { setPokemon } = this.props;
+    const { fetchPokemon } = this.props;
     const { name, id } = this.state;
-    try {
-      const newPokemon = name ? await getPokemon(name) : await getPokemon(id);
-      setPokemon(newPokemon);
-      console.log(newPokemon);
-    } catch {
-      console.log('error')
-    }
+    const url = `https://pokeapi.co/api/v2/pokemon/${id}/`;
+    fetchPokemon(url);
     this.clearInputs();
   };
 
   handleSurprise = async e => {
     e.preventDefault();
-    const { setPokemon } = this.props;
+    const { fetchPokemon } = this.props;
     const newId = randNum();
-    const newPokemon = await getPokemon(newId);
+    const url = `https://pokeapi.co/api/v2/pokemon/${newId}/`;
+    fetchPokemon(url);
     this.clearInputs();
-    setPokemon(newPokemon);
-    console.log(newPokemon);
   };
 
   clearInputs = () => {
@@ -104,7 +99,7 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => (
-  bindActionCreators({ setPokemon, catchPokemon }, dispatch)
+  bindActionCreators({ fetchPokemon, catchPokemon }, dispatch)
 );
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);
